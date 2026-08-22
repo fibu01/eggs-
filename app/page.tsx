@@ -1,3 +1,5 @@
+import { FoodGallery } from "./FoodGallery";
+
 const instagramUrl = "https://www.instagram.com/eggsandja/";
 
 export default function Home() {
@@ -21,6 +23,7 @@ export default function Home() {
           <img src="/eggs-and-logo.png" alt="Eggs and logo" />
         </a>
         <nav aria-label="Main navigation">
+          <a href="#gallery">Gallery</a>
           <a href="#first-look">First look</a>
           <a href="#story">Our story</a>
           <a href="#visit">Visit</a>
@@ -45,8 +48,8 @@ export default function Home() {
             get cracked wide open.
           </p>
           <div className="hero-actions">
-            <a className="button button-dark" href="#first-look">
-              Get a first look <span aria-hidden="true">↓</span>
+            <a className="button button-dark" href="#gallery">
+              See what&apos;s cooking <span aria-hidden="true">↓</span>
             </a>
             <a className="text-link" href={instagramUrl} target="_blank" rel="noreferrer">
               @eggsandja <span aria-hidden="true">↗</span>
@@ -73,6 +76,8 @@ export default function Home() {
         <p>NOT JUST EGGS.</p>
         <p>ALL KINGSTON ENERGY.</p>
       </section>
+
+      <FoodGallery />
 
       <section className="first-look" id="first-look">
         <div className="section-heading">
