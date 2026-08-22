@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react";
 
+const assetPath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 const photos = [
   {
     src: "/gallery/mx-14333.webp",
@@ -142,7 +144,7 @@ export function FoodGallery() {
               onClick={() => setActiveIndex(index)}
               aria-label={`Open photo ${index + 1}: ${photo.caption}`}
             >
-              <img src={photo.src} alt={photo.alt} loading="lazy" />
+              <img src={`${assetPath}${photo.src}`} alt={photo.alt} loading="lazy" />
               <span className="gallery-number" aria-hidden="true">
                 {String(index + 1).padStart(2, "0")}
               </span>
@@ -186,7 +188,7 @@ export function FoodGallery() {
             ←
           </button>
           <figure onClick={(event) => event.stopPropagation()}>
-            <img src={activePhoto.src} alt={activePhoto.alt} />
+            <img src={`${assetPath}${activePhoto.src}`} alt={activePhoto.alt} />
             <figcaption>
               <span>{String(activeIndex + 1).padStart(2, "0")} / {photos.length}</span>
               {activePhoto.caption}

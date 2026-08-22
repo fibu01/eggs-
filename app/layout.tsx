@@ -1,13 +1,15 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+const assetPath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const metadata: Metadata = {
   title: "Eggs &….. | Kingston, Jamaica",
   description:
     "A bold new breakfast concept from Chef Damion ‘Stewie’ Stewart, coming soon to Kingston, Jamaica.",
   icons: {
-    icon: "/eggs-and-logo.png",
-    shortcut: "/eggs-and-logo.png",
+    icon: `${assetPath}/eggs-and-logo.png`,
+    shortcut: `${assetPath}/eggs-and-logo.png`,
   },
   openGraph: {
     title: "Eggs &….. | Kingston, Jamaica",

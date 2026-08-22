@@ -1,6 +1,7 @@
 import { FoodGallery } from "./FoodGallery";
 
 const instagramUrl = "https://www.instagram.com/eggsandja/";
+const assetPath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export default function Home() {
   return (
@@ -20,7 +21,7 @@ export default function Home() {
 
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Eggs and home">
-          <img src="/eggs-and-logo.png" alt="Eggs and logo" />
+          <img src={`${assetPath}/eggs-and-logo.png`} alt="Eggs and logo" />
         </a>
         <nav aria-label="Main navigation">
           <a href="#gallery">Gallery</a>
@@ -60,7 +61,7 @@ export default function Home() {
         <div className="hero-image-wrap">
           <img
             className="hero-image"
-            src="/kingston-breakfast-hero.png"
+            src={`${assetPath}/kingston-breakfast-hero.png`}
             alt="Jamaican-inspired fried egg and seasoned chicken breakfast sandwich"
           />
           <div className="stamp" aria-hidden="true">
@@ -181,12 +182,12 @@ export default function Home() {
 
       <section className="social" aria-label="Instagram">
         <div className="social-intro">
-          <img src="/eggs-and-logo.png" alt="" aria-hidden="true" />
+          <img src={`${assetPath}/eggs-and-logo.png`} alt="" aria-hidden="true" />
           <p>For first bites, menu drops, and whatever comes after the ampersand.</p>
           <a href={instagramUrl} target="_blank" rel="noreferrer">@eggsandja <span aria-hidden="true">↗</span></a>
         </div>
         <div className="social-tile tile-photo">
-          <img src="/kingston-breakfast-hero.png" alt="Close-up of an egg breakfast sandwich" />
+          <img src={`${assetPath}/kingston-breakfast-hero.png`} alt="Close-up of an egg breakfast sandwich" />
         </div>
         <div className="social-tile tile-type" aria-hidden="true">
           <span>RUNNY</span><span>CRISPY</span><span>MESSY</span>
